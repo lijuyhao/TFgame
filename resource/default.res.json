@@ -1,0 +1,30 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,bg_jpg,cow_png,scene1sprite_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/cow.png",
+			"type": "image",
+			"name": "cow_png"
+		},
+		{
+			"url": "myJson/scene1sprite.json",
+			"type": "json",
+			"name": "scene1sprite_json"
+		}
+	]
+}
