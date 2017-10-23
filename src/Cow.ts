@@ -3,7 +3,14 @@ class Cow extends egret.Sprite {
 
     private _speed: number = 0.5;
 
-    private Path: Array<egret.Point>;
+    private Path: Array<egret.Point> = [
+        new egret.Point(470, 244)
+        , new egret.Point(470, 427)
+        , new egret.Point(657, 427)
+        , new egret.Point(1135, 248)
+        , new egret.Point(1135, 360)
+        , new egret.Point(1300,690)
+    ];
 
     public constructor() {
         super();
@@ -12,13 +19,7 @@ class Cow extends egret.Sprite {
     }
 
     public onUpdate(passTime: number) {
-        this.Path = [
-            new egret.Point(470, 244)
-            , new egret.Point(470, 427)
-            , new egret.Point(657, 427)
-            , new egret.Point(1135, 248)
-            , new egret.Point(1135, 360)
-        ];
+
 
         this.move(passTime);
 
@@ -96,8 +97,8 @@ class Cow extends egret.Sprite {
             this.x = point.x;
             this.y = point.y;
             this.Path.shift();
-            console.log(this.Path);
             
+
 
             if (this.Path.length == 0) {
                 //当每次到达一个拐点时候，我们就删除路径中的当前点当到达的时候，我们派发事件  同时删除精灵。

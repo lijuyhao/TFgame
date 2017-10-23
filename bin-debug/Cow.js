@@ -17,18 +17,19 @@ var Cow = (function (_super) {
     function Cow() {
         var _this = _super.call(this) || this;
         _this._speed = 0.5;
+        _this.Path = [
+            new egret.Point(470, 244),
+            new egret.Point(470, 427),
+            new egret.Point(657, 427),
+            new egret.Point(1135, 248),
+            new egret.Point(1135, 360),
+            new egret.Point(1300, 690)
+        ];
         _this.direction = "";
         _this.addChild(new egret.Bitmap(RES.getRes('cow_png')));
         return _this;
     }
     Cow.prototype.onUpdate = function (passTime) {
-        this.Path = [
-            new egret.Point(470, 244),
-            new egret.Point(470, 427),
-            new egret.Point(657, 427),
-            new egret.Point(1135, 248),
-            new egret.Point(1135, 360)
-        ];
         this.move(passTime);
     };
     Cow.prototype.GetDistance = function (p1, p2) {
@@ -85,7 +86,6 @@ var Cow = (function (_super) {
             this.x = point.x;
             this.y = point.y;
             this.Path.shift();
-            console.log(this.Path);
             if (this.Path.length == 0) {
                 //当每次到达一个拐点时候，我们就删除路径中的当前点当到达的时候，我们派发事件  同时删除精灵。
                 this.parent.removeChild(this);
